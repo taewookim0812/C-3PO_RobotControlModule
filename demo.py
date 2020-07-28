@@ -1,4 +1,3 @@
-# -*- encoding: UTF-8 -*-
 """
 Function: Demo Code
 Python Ver: 2.7
@@ -129,7 +128,7 @@ if __name__ == "__main__":
 
     if target == 'SIM':
         robotIp = "localhost"
-        robotPort = 50116   # set your own port number
+        robotPort = 56499   # set your own port number
     elif target == 'REAL':
         """
         For wifi connection with NAO, refer:

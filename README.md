@@ -31,7 +31,8 @@ structure of our C-3PO motion retargeting system.
 ### External Dependencies 
 <pre>
 Python 2.7
-* <a href="http://doc.aldebaran.com/2-5/dev/python/install_guide.html">naoqi</a>
+* <a href="https://developer.softbankrobotics.com/nao6/downloads/nao6-downloads-windows">naoqi download</a>
+* <a href="http://doc.aldebaran.com/2-5/dev/python/install_guide.html">naoqi install guide</a>
 * <a href="http://doc.aldebaran.com/2-4/dev/community_software.html">Choreography</a>
 </pre>
 
