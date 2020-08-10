@@ -8,23 +8,44 @@ structure of our C-3PO motion retargeting system.
 
 ### Getting Started
 ```buildoutcfg 
+* Demo
 1) Set the appropriate port numbers and run the "demo.py" file.
-2) Run the "pykinect_stream.py" of the motion retargeting module and wait to be connected, then enjoy. 
+2) Run the "pykinect_stream.py" of the motion retargeting module and wait to be connected, then enjoy.
+
+* Phase 1 training
+0) Copy the sound files in "nao_touch_sound" folder to NAO hardware using choregraphe
+1) Generate reference motions using "ReferenceMotionGen.py" or just utilize the project given in "choregraphe_project"
+2) In "ReferenceMotionManager.py"
+ 2-1) Samples each reference motion trajectory by running "NTU_motion_class_sampling"
+ 2-2) Augment the trajectories by running "RefMotionAugmentation" 
+ 2-3) Merge the augmented trajectories by running "MergeAugData"
+3) Once you finish the reference motion generation process, you can demonstrate the reference motion by running "ReplayReferenceMotion"
+
+* In this Robot control module, there is nothing to do for Phase 2 training. 
 ```
 
 ### Update
 ```buildoutcfg
-* Training module will be updated soon
+* Phase 3 training module will be updated.
+* Phase 1 training module was updated.
+* Demo module was updated.
 ```
 
 ### File descriptions
 ```buildoutcfg
     .
-    ├── figs                                     
+    ├── aug_motions         # Augmented reference motion files
+    ├── aug_motions_merged  # Contains the merged file of augmented ref. motion data 
+    ├── choregraphe_project # Choregraphe project files
+    ├── figs    
+    ├── nao_touch_sound     # Sound files used in touch based NAO manipulation
+    ├── ref_motions         # Contains reference motion data of each class                                 
     │   └── system.png      # Figure for README file
     ├── CommonObject.py     # Commonly used functions and variables
     ├── demo.py             # Demo file
-    ├── README.md           
+    ├── README.md
+    ├── ReferenceMotionGen.py       # Direct-Teaching based reference motion generation
+    ├── ReferenceMotionManager.py   # Manager class for reference motion generation           
     └── requirements.txt
 ```
 
@@ -33,7 +54,7 @@ structure of our C-3PO motion retargeting system.
 Python 2.7
 * <a href="https://developer.softbankrobotics.com/nao6/downloads/nao6-downloads-windows">naoqi download</a>
 * <a href="http://doc.aldebaran.com/2-5/dev/python/install_guide.html">naoqi install guide</a>
-* <a href="http://doc.aldebaran.com/2-4/dev/community_software.html">Choreography</a>
+* <a href="http://doc.aldebaran.com/2-4/dev/community_software.html">Choreographe</a>
 </pre>
 
 ### Requirements

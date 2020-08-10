@@ -39,7 +39,7 @@ def send_and_recv(motionProxy, dummy=None):
     space = motion.FRAME_TORSO
 
     # LPF params
-    useLFP = False
+    useLPF = False
     alpha = 0.99
     prev_motor = np.array([])
     while True:
@@ -53,7 +53,7 @@ def send_and_recv(motionProxy, dummy=None):
             continue
 
         if header == 'SetMotor':
-            if useLFP:
+            if useLPF:
                 if prev_motor.size == 0:
                     prev_motor = np.array(data)
 
@@ -76,7 +76,7 @@ def send_and_recv(motionProxy, dummy=None):
             RArm = ["RShoulderPitch", "RShoulderRoll", "RElbowYaw", "RElbowRoll"]
             names = LArm + RArm
 
-            if useLFP:
+            if useLPF:
                 if prev_motor.size == 0:
                     prev_motor = np.array(data)
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     if target == 'SIM':
         robotIp = "localhost"
-        robotPort = 56499   # set your own port number
+        robotPort = 57543   # set your own port number
     elif target == 'REAL':
         """
         For wifi connection with NAO, refer:
